@@ -5,3 +5,102 @@ html, body {
     padding: 0;
     overflow: hidden;
 }
+
+html, body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #bdbdbd;
+}
+
+canvas {
+    position: relative;
+    z-index: 2;
+}
+
+#loading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #bdbdbd;
+    z-index: 10000;
+    -webkit-transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1;
+}
+
+#loading.loaded {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#loading .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+#loading .loader {
+    width: calc(100% - 0px);
+    height: calc(100% - 0px);
+    border: 8px solid #2563eb;
+    border-top: 8px solid #303030;
+    border-radius: 50%;
+    -webkit-animation: rotate 1.5s linear infinite;
+    animation: rotate 1.5s linear infinite;
+    box-sizing: border-box;
+    will-change: transform;
+}
+
+#loading .loader2 {
+    -webkit-animation: irotate 1s linear infinite;
+    animation: irotate 1s linear infinite;
+}
+
+#loading .logo {
+    position: absolute;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10001;
+}
+
+#loading .logo img {
+    width: 136px;
+    animation: rotate 3s cubic-bezier(.52, .29, .83, .13), rotate 0.5s linear 3s infinite;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes irotate {
+    to {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes irotate {
+    to {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg);
+    }
+}

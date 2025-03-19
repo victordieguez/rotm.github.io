@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>ROTM</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(() => document.getElementById("loading").remove(), 10000);
+        };
+    </script>
     <script src="composeApp.js" type="application/javascript"></script>
 </head>
+
 <body>
+    <div id="loading">
+        <div class="logo"><img src="rim.png" /></div>
+        <div class="circle">
+            <div class="loader">
+                <div class="loader loader2">
+                    <div class="loader">
+                        <div class="loader loader2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text"></div>
+        </div>
+    </div>
 </body>
+
 </html>
